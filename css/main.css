@@ -1,0 +1,224 @@
+/*Extra small by default*/
+
+body {
+    background-color: #000;
+    font-family: 'Open Sans', sans-serif;
+    padding-top: 70px;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+    color: #FFF;
+    font-size: 1.7em;
+}
+
+.submit {
+    font-family: 'LithosPro-Regular';
+    font-size:1em;
+}
+
+a {
+    color: #fff;
+    opacity: 1;
+    transition: opacity .25s ease-in-out;
+    -moz-transition: opacity .25s ease-in-out;
+    -webkit-transition: opacity .25s ease-in-out;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.navbar {
+    background-color: #000 !important;
+    padding: 0 !important;
+    border-bottom: 10px solid #595959;
+    font-family: 'LithosPro-Regular';
+    font-size: 1.6em;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.logo {
+    height: 3.8em;
+    padding-bottom: 0.1em;
+}
+
+.video-fluid {
+    min-width: 75% !important;
+    max-width: 75% !important;
+    margin-top: 5%;
+}
+
+.reel {
+    margin-top: 5%;
+    width: 100%;
+}
+
+.rgba-gradient {
+    background: linear-gradient(45deg, rgba(213, 15, 61, 0.6), rgba(13, 17, 198, 0.69) 100%);
+}
+
+@font-face {
+    font-family: 'LithosPro-Regular';
+    src: url('fonts/LithosPro-Regular.eot') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.toggle-menu {
+    display: block;
+    position: relative;
+    margin: -10%;
+    margin-right: 3em;
+    margin-top: -10%;
+    width: 2rem;
+    height: 1.5rem;
+    text-indent: -999em;
+    cursor: pointer;
+}
+
+.toggle-menu--clicked .menu__bar:nth-child(1) {
+    top: 1.25rem;
+    transform: rotate(45deg);
+}
+
+.toggle-menu--clicked .menu__bar:nth-child(2) {
+    transform: translateX(100%) scale(0);
+}
+
+.toggle-menu--clicked .menu__bar:nth-child(3) {
+    top: 1.25rem;
+    transform: rotate(-45deg);
+}
+
+.menu__bar {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 5rem;
+    height: 0.3rem;
+    transition: top 0.4s ease-out, transform 0.4s ease-out;
+    background-color: rgb(255, 255, 255);
+}
+
+.menu__bar:nth-child(1) {
+    top: 0;
+    border-radius: 50px;
+}
+
+.menu__bar:nth-child(2) {
+    top: 1rem;
+    border-radius: 50px;
+}
+
+.menu__bar:nth-child(3) {
+    top: 2rem;
+    border-radius: 50px;
+}
+
+li {
+    margin: 1em;
+}
+
+.main {
+    color: rgba(255, 255, 255, 0.836);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: light !important;
+    font-size: 1.5em;
+    line-height: 1.7em;
+}
+
+.profilePic {
+    width: 75%;
+}
+
+.jumbotron {
+    background-color: #000;
+}
+
+h1 {
+    font-family: 'LithosPro-Regular';
+}
+
+h2 {
+    font-family: 'LithosPro-Regular';
+    color: #FFF !important;
+}
+
+h3 {
+    color: #FFF;
+    font-family: 'LithosPro-Regular';
+    font-size: 1.7em;
+}
+
+h5 {
+    font-family: 'LithosPro-Regular';
+    font-size: 0.7em;
+    margin-top: 1em;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .6s ease;
+    background-color: #000;
+}
+
+.jumbotron:hover .overlay {
+    opacity: 0.7;
+}
+
+.text {
+    color: white;
+    font-size: 1.5em;
+    font-family: 'LithosPro-Regular';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image {
+    display: block;
+}
+
+.md-form.md-bg input[type=date], .md-form.md-bg input[type=datetime-local], .md-form.md-bg input[type=email], .md-form.md-bg input[type=number], .md-form.md-bg input[type=password], .md-form.md-bg input[type=search-md], .md-form.md-bg input[type=search], .md-form.md-bg input[type=tel], .md-form.md-bg input[type=text], .md-form.md-bg input[type=time], .md-form.md-bg input[type=url], .md-form.md-bg textarea.md-textarea {
+    background-color: #d8d8d8 !important;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#595959)), -webkit-gradient(linear, left top, left bottom, from(#ced4da), to(#ced4da)) !important;
+    background-image: linear-gradient(to bottom, #595959, #595959), linear-gradient(to bottom, #ced4da, #ced4da) !important;
+    background-size: 0 3px, 100% 3px;
+    -webkit-transition: -webkit-background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    -webkit-transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+    transition: background-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+/*Media Queries*/
+
+/*small up sizes*/
+
+@media (min-width: 576px) {
+    .reel {
+        margin-top: 1%;
+        width: 100%;
+    }
+}
+
+/*med up sizes*/
+
+@media (min-width: 768px) {}
+
+/*large up sizes*/
+
+@media (min-width: 992px) {}

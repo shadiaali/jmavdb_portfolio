@@ -1,0 +1,167 @@
+
+<script>
+    function _(id) {
+        return document.getElementById(id);
+    }
+
+    function submitForm() {
+        _("mybtn").disabled = true;
+        _("status").innerHTML = '<p class="wow fadeIn text-center">Sending. Please wait...</p>';
+        var formdata = new FormData();
+        formdata.append("n", _("n").value);
+        formdata.append("e", _("e").value);
+        formdata.append("m", _("m").value);
+        var ajax = new XMLHttpRequest();
+        ajax.open("POST", "scripts/contact_handler.php");
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+                if (ajax.responseText == "success") {
+                    _("my_form").innerHTML =
+                        '<center><div class="mt-4 container wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.1s"><h3 style="color:#fff;">Thanks for reaching out, ' +
+                        _("n").value +
+                        '! <br>Your email has been sent. </h3></div></center>';
+                } else {
+                    _("status").innerHTML = ajax.responseText;
+                    _("mybtn").disabled = false;
+                }
+            }
+        }
+        ajax.send(formdata);
+    }
+</script>
+
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CONTACT</title>
+    <meta name="description" content="content description">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/css/mdb.min.css" rel="stylesheet">
+    <!--Font-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body class="wow fadeIn" data-wow-duration="2s">
+    <!--Content -->
+
+
+
+    <!-- Main navigation -->
+    <header>
+
+        <nav class="wow fadeIn navbar sticky-top navbar-dark navbar-expand-lg " data-wow-duration="2s">
+
+            <div data-wow-duration="2s" class="wow fadeIn navbar-collapse collapse dual-nav order-1 order-lg-0 ">
+                <ul data-wow-duration="2s" class="wow fadeIn navbar-nav mx-auto">
+
+                    <li class="nav-item left text-center">
+                        <a class="wow fadeIn nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item left text-center">
+                        <a class="wow fadeIn nav-link" href="about.html">About</a>
+                    </li>
+
+                </ul>
+            </div>
+            <a data-wow-duration="2s" href="index.html" class="wow fadeIn navbar-brand mx-auto "><img class="logo"
+                    src="images/logo.svg" alt="JMA Logo"></a>
+            <div data-wow-duration="2s" class="wow fadeIn navbar-collapse collapse dual-nav order-2">
+                <ul data-wow-duration="2s" class="wow fadeIn mx-auto nav navbar-nav ml-auto">
+                    <li class="nav-item right text-center">
+                        <a class="wow fadeIn nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="wow fadeIn nav-item right text-center">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <div data-wow-duration="2s" class="wow fadeIn navbar-toggler toggle-menu" data-toggle-menu
+                data-target=".dual-nav" data-toggle="collapse">
+
+                <a><span class="navbar-toggler-icon menu__bar"></span>
+                    <span class="navbar-toggler-icon menu__bar"></span>
+                    <span class="navbar-toggler-icon menu__bar"></span></a>
+            </div>
+
+        </nav>
+
+    </header>
+    <!-- End Main navigation -->
+
+    <!--start content container-->
+    <div class="container wow fadeIn mt-5 mb-5">
+
+        <div class="wow fadeIn md-form md-bg form-lg row justify-content-center">
+            <div class="form-group wow fadeIn col-10">
+
+<form autocomplete="off" id="my_form" method="post"
+    onsubmit="submitForm(); return false;">
+
+<div class="wow fadeIn container mx-1 my-1"><br>
+    <p class="mx-4">If you are interested in my work and wish to work with me, please fill this contact form and I will
+        answer in
+        approximately 48 hours.</p><br>
+</div>
+
+
+    <h3>Name:</h3>
+    <input id="n" name="name" type="text" class="wow fadeIn form-control" required>
+<br>
+    
+        <h3>Email:</h3>
+    <input id="e" name="email" type="email" required class="wow fadeIn form-control" required><br>
+
+
+            <h3>Message:</h3>
+    
+<div class="md-form mb-4 wow fadeIn">
+    <textarea id="m" name="message" class="md-textarea form-control" rows="5"></textarea>
+    
+</div>
+
+    <br>
+    
+
+    <button value="SUBMIT" id="mybtn" type="button submit"
+        class="wow fadeIn submit btn btn-block btn-dark">SUBMIT</button>
+<span id="status"></span>
+</form>
+
+</div>
+
+
+<!--End content-->
+
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js">
+</script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.7/js/mdb.min.js"></script>
+<!--main javascript-->
+<script type="text/javascript" src="js/main.js"></script>
+<!-- Initializations -->
+<script type="text/javascript">
+    // Animations initialization
+    new WOW().init();
+</script>
+</body>
+
+</html>
